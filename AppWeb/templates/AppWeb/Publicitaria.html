@@ -1,0 +1,46 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} Inicio {% endblock %}
+
+{% block link_cambiante2 %}
+<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+
+{% block titulo %} inicio {% endblock %}
+
+{% block imagen_cambiante%}
+                        
+<figure class="mb-4"><img class="img-fluid rounded" src="{% static 'AppWeb/assets/publicitaria.jpg' %}" alt="..." /></figure>
+
+
+{% endblock %}
+
+{% block titulo_cambiante %}
+
+<h1 class="fw-bolder mb-1">Publicitaria</h1>
+
+{% endblock %}
+
+{% block subtitulo_cambiante %}
+
+<div class="text-muted fst-italic mb-2">Subtitulo</div>
+
+{% endblock %}
+
+{% block contenido_cambiante %}
+
+<h2>La fotografia publicitaria</h2>
+    <p class="fs-5 mb-4">La fotografía publicitaria es un género fotográfico que tiene un impacto significativo en el mundo de hoy. Se utiliza en una amplia variedad de industrias, desde la publicidad hasta la moda, y se considera uno de los géneros fotográficos más lucrativos y fáciles de monetizar.
+
+        La fotografía publicitaria también es un medio poderoso para transmitir un mensaje, crear una marca y vender productos o servicios. La calidad de las imágenes y su capacidad de llamar la atención y conectar con el público objetivo es fundamental en este género fotográfico.</p>
+    
+
+{% endblock %}
+
+{% block section_cambiante %}
+
+
+{% endblock %}

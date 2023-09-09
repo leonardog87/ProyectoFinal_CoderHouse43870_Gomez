@@ -1,0 +1,36 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} Registro {% endblock %}
+
+{% block titulo %} Registro {% endblock %}
+
+{% block titulo_cambiante %}
+
+<h1 class="fw-bolder mb-1">Registro</h1>
+
+{% endblock %}
+
+{% block subtitulo_cambiante %}
+
+<div class="text-muted fst-italic mb-2">Ingrese sus datos</div>
+
+{% endblock %}
+
+{% block contenido_cambiante %}
+
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+    
+    </table>
+
+    <input type="submit" value="Registrar">
+              
+</form>
+
+{% endblock %}
+

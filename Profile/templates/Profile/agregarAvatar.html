@@ -1,0 +1,32 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} Cambiar Avatar {% endblock %}
+
+{% block link_cambiante2 %}
+<img src="{{ avatar }}" alt="Avatar" style="width:50px;height:50px;"/>
+<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+{% block titulo_cambiante %}
+<h1> Cambiar Avatar </h1>
+{% endblock %}
+
+{% block contenido_cambiante %}
+
+<form action="{% url 'agregarAvatar'  %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="Agregar Avatar">
+    
+    
+</form>
+
+
+{% endblock %}

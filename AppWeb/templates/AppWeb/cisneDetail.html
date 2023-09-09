@@ -1,0 +1,51 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %}
+Blog: {{ cisne.titulo }}
+{% endblock %}
+
+{% block link_cambiante2 %}
+<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+{% block titulo %}
+{% endblock %}
+
+{% block imagen_cambiante%}
+{% endblock %}
+
+{% block titulo_cambiante %}
+<h1 class="fw-bolder mb-1">{{ cisne.titulo }}</h1>
+{% endblock %}
+
+{% block subtitulo_cambiante %}
+<div class="text-muted fst-italic mb-2">Subtitulo</div>
+{% for imagen in cisne.imagen.all %}
+<div class="ms-3"></div>
+<figure class="mb-4"><img class="img-fluid rounded" src="{{ cisne.imagen.url }}" alt="img"></figure>
+{% endfor %}  
+<img src="{{cisne.imagen.url}}" class="" width="100px">
+{% endblock %}
+
+{% block contenido_cambiante %}
+<h2>{{blog.titulotexto}}</h2>
+    <p class="fs-5 mb-4">{{cisne.message}}</p>    
+    Creado por: {{ cisne.user.username }}    
+    {% if user.id == cisneuser.id %}
+        <br>
+        <a class="btn btn-" href="{% url 'blogUpdate' blog.id %}">Editar</a>
+        <a class="btn btn-" href="{% url 'ImagenCreate' blog.id %}">agregarImagen</a>                
+    {% endif %}
+    
+<br>
+<br>
+{% for mensaje in blog.mensajes.all %}
+<div class="ms-3"></div>
+<hr>
+<div class="fw-bold">{{mensaje.user}}:</div> {{mensaje.message}}</p>
+{% endfor %}
+{% endblock %}
+
+

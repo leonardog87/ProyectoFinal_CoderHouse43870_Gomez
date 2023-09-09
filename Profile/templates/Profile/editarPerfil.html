@@ -1,0 +1,36 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} Perfil {% endblock %}
+
+{% block link_cambiante %}
+<img src="{{ avatar }}" alt="Avatar" style="width:50px;height:50px;"/>
+
+<li class="nav-item"><a class="nav-link" href="{% url 'PasswordEdit'%}">Cambiar Contraseña</a></li>
+
+{% endblock %}
+
+{% block titulo_cambiante %}
+
+<h1 class="fw-bolder mb-1">Perfil</h1>
+
+{% endblock %}
+
+{% block contenido_cambiante %}
+
+<form action="{% url 'editarPerfil' %}" method="POST"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    
+    <input type="submit" value="Guardar">
+   
+</form>
+
+    <a class="btn btn-" href="{% url 'agregarAvatar' %}">Modificar Avatar</a>
+
+{% endblock %}

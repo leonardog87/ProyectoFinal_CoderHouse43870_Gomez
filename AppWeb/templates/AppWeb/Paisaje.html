@@ -1,0 +1,44 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} Inicio {% endblock %}
+
+{% block link_cambiante2 %}
+<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+
+{% block titulo %} inicio {% endblock %}
+
+{% block imagen_cambiante%}
+                        
+<figure class="mb-4"><img class="img-fluid rounded" src="{% static 'AppWeb/assets/paisaje.jpg' %}" alt="..." /></figure>
+
+
+{% endblock %}
+
+{% block titulo_cambiante %}
+
+<h1 class="fw-bolder mb-1">Paisajes</h1>
+
+{% endblock %}
+
+{% block subtitulo_cambiante %}
+
+<div class="text-muted fst-italic mb-2">Subtitulo</div>
+
+{% endblock %}
+
+{% block contenido_cambiante %}
+
+<h2>La fotografia paisajística</h2>
+    <p class="fs-5 mb-4">La fotografía de paisaje es un género fotográfico que reproduce espacios del mundo, a menudo de gran extensión y en la naturaleza, aunque también puede hacerse con escenarios urbanos y microscópicos. La mayoría de las fotos de paisaje muestran escasa actividad humana y pocos elementos artificiales.</p>
+    
+
+{% endblock %}
+
+{% block section_cambiante %}
+
+
+{% endblock %}

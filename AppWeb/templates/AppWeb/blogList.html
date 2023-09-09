@@ -1,0 +1,41 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static%}
+
+{% block tittle %} message list {% endblock %}
+
+{% block link_cambiante2 %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+
+{% block titulo %} Blogs {% endblock %}
+
+{% block contenido_cambiante %}
+<h1> Blogs </h1>
+{% for blog in object_list %}
+    <li>    <table>
+        {{ blog.titulo }}
+            
+            <a class="btn btn-info" href="{% url 'blogDetail' blog.id %}">Ver</a> 
+         
+                {% if user.id == blog.user.id %}                         
+                    <a class="btn btn-primary" href="{% url 'blogUpdate' blog.id %}">Editar</a>
+                    -
+                    <a class="btn btn-danger" href="{% url 'blogDelete' blog.id %}">Eliminar</a>        
+                    {% else %}     
+            {% endif %}
+        
+    </li></table>
+{% endfor %}
+{% if user.is_authenticated %}
+    <a class="button" href="{% url 'blogForm' %}">Crear blog!</a>
+    {% else %}
+    <br>
+    <h6>Si queres agregar un Blog tenes que Loguearte!</h6>
+{% endif %}
+{% endblock %}
+
+{% block section_cambiante %}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "AppWeb/father.html" %}
+
+{% load static %}
+
+{% block tittle %} Nuevo mensaje {% endblock %}
+
+{% block link_cambiante2 %}
+<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
+
+
+{% block titulo_cambiante %} Nuevo mensaje {% endblock %}
+
+{% block contenido_cambiante %}
+<h1> Mensaje </h1>
+
+
+<form method="POST"> {% csrf_token %}
+    
+    {{ form.as_p }}
+        
+    <input type="submit" vaLue="Enviar">
+</form>
+
+
+
+
+
+
+
+   
+
+
+{% endblock %}
