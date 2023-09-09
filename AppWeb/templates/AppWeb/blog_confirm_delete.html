@@ -2,18 +2,18 @@
 
 {% load static %}
 
-{% block tittle %} DeleteConfirm {% endblock %}
+{% block tittle %}
+    Confirmacion borrado
+{% endblock %}
 
-{% block titulo %} DeleteConfirm {% endblock %}
+{% block titulo_cambiante %}
+    Confirmacion borrado
+{% endblock %}
 
 {% block contenido_cambiante %}
-
-<form method="post">{% csrf_token %}
-    Estas segur@ de eliminar el blog: "{{ object.titulo }}"?
-    <br>
-<input class="m-0 text-center" type="submit" value="SI">
-
-</form>
-
-
+    <form method="post">{% csrf_token %}
+        Estas seguro/a de eliminar el blog: "{{ object.titulo }}"?
+        <br>
+        <input class="m-0 text-center" type="submit" value="SI">
+    </form>
 {% endblock %}

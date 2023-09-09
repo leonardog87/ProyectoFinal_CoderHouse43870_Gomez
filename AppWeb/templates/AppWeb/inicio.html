@@ -2,44 +2,32 @@
 
 {% load static%}
 
-{% block tittle %} Inicio {% endblock %}
-
-{% block link_cambiante2 %}
-<img src="{{ avatar }}" alt="Avatar" style="width:50px;height:50px;"/>
-<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% block tittle %}
+    Inicio
 {% endblock %}
 
+{% block link_cambiante2 %}
+    <img src="{{ avatar }}" alt="Avatar" style="width:50px;height:50px;"/>
+    <li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
 
-{% block titulo %} inicio {% endblock %}
-
-{% block imagen_cambiante%}
-                        
-<figure class="mb-4"><img class="img-fluid rounded" src="{% static 'AppWeb/assets/programacion.jpg' %}" alt="..." /></figure>
-
-
+{% block imagen_cambiante%}                        
+    <figure class="mb-4"><img class="img-fluid rounded" src="{% static 'AppWeb/assets/programacion.jpg' %}" alt="..." /></figure>
 {% endblock %}
 
 {% block titulo_cambiante %}
-
-<h1 class="fw-bolder mb-1">Bienvenido a nuestro Blog de Fotografia</h1>
-
+    <h1 class="fw-bolder mb-1">Bienvenido a nuestro Blog de Fotografia</h1>
 {% endblock %}
 
 {% block subtitulo_cambiante %}
-
-<div class="text-muted fst-italic mb-2">Subtitulo</div>
-
+    <div class="text-muted fst-italic mb-2">Subtitulo</div>
 {% endblock %}
 
 {% block contenido_cambiante %}
-
-<h2>La fotografia</h2>
-    <p class="fs-5 mb-4">La fotografía (de foto- y -grafía)​ es el arte y la técnica de obtener imágenes duraderas debido a la acción de la luz.2​ Es el proceso de proyectar imágenes, capturarlas y plasmarlas, bien por medio del fijado en un medio sensible a la luz o por la conversión en señales electrónicas. Basándose en el principio de la cámara oscura, se proyecta una imagen captada por un pequeño agujero sobre una superficie, de tal forma que el tamaño de la imagen queda reducido. Para capturar y guardar esta imagen, las cámaras fotográficas utilizan película sensible para la fotografía química, mientras que en la fotografía digital se emplean sensores tipo CCD, CMOS, etc.; que graban luego las imágenes en memorias digitales. El término fotografía sirve para denominar tanto al conjunto del proceso de obtención de esas imágenes como a su resultado: las propias imágenes obtenidas o «fotografías».</p>
-    
-
+    <h2>La fotografia</h2>
+    <p class="fs-5 mb-4">La fotografía (de foto- y -grafía)​ es el arte y la técnica de obtener imágenes duraderas debido a la acción de la luz.2​ Es el proceso de proyectar imágenes, capturarlas y plasmarlas, bien por medio del fijado en un medio sensible a la luz o por la conversión en señales electrónicas. Basándose en el principio de la cámara oscura, se proyecta una imagen captada por un pequeño agujero sobre una superficie, de tal forma que el tamaño de la imagen queda reducido. Para capturar y guardar esta imagen, las cámaras fotográficas utilizan película sensible para la fotografía química, mientras que en la fotografía digital se emplean sensores tipo CCD, CMOS, etc.; que graban luego las imágenes en memorias digitales. El término fotografía sirve para denominar tanto al conjunto del proceso de obtención de esas imágenes como a su resultado: las propias imágenes obtenidas o «fotografías».
+    </p>
 {% endblock %}
 
 {% block section_cambiante %}
-
-
 {% endblock %}

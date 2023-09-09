@@ -2,33 +2,26 @@
 
 {% load static %}
 
-{% block tittle %} Nuevo Blog {% endblock %}
+{% block tittle %}
+    Nuevo blog
+{% endblock %}
 
 {% block link_cambiante2 %}
-<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
 {% endblock %}
 
-
-{% block titulo %} Nuevo Blog {% endblock %}
+{% block titulo_cambiante %}
+    <h1> Nuevo blog </h1>
+{% endblock %}
 
 {% block contenido_cambiante %}
-<h1> Blog </h1>
-
-
-<form method="POST"> {% csrf_token %}
-    
-    {{ form.as_p }}
-        
-    <input type="submit" vaLue="Guardar">
-</form>
-
-
-
-
-
-
-
-   
-
-
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <table>    
+        {{ form.as_table }}    
+        </table>
+        <input type="submit" value="Agregar blog!">
+    </form>
 {% endblock %}
+
+
+

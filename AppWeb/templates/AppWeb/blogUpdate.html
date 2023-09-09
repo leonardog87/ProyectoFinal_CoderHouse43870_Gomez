@@ -2,28 +2,28 @@
 
 {% load static %}
 
-{% block tittle %} Editar Blog {% endblock %}
+{% block tittle %}
+    Editar Blog
+{% endblock %}
 
 {% block link_cambiante2 %}
-<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
 {% endblock %}
 
-
-{% block titulo %} Editar Blog {% endblock %}
+{% block titulo_cambiante %}
+    <h1> Editar Blog </h1>
+{% endblock %}
 
 {% block contenido_cambiante %}
-<h1> Editar Blog </h1>
-
-{% if user.is_authenticated %}
-
-<form method="POST"> {% csrf_token %}
-    
-    {{ form.as_p }}
-        
-    <input type="submit" vaLue="Guardar">
-    
-</form>
-
-{% endif %}
-
+    {% if user.is_authenticated %}
+        <form method="POST"> {% csrf_token %}    
+            <table>    
+                {{ form.as_table }}    
+            </table>        
+            <input type="submit" vaLue="Guardar">    
+        </form>
+    {% endif %}
 {% endblock %}
+<table>    
+    {{ form.as_table }}    
+    </table>

@@ -2,67 +2,44 @@
 
 {% load static%}
 
-{% block tittle %} Blog: {{ blog.titulo }} {% endblock %}
-
-{% block link_cambiante2 %}
-<li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% block tittle %}
+    Blog: {{ blog.titulo }}
 {% endblock %}
 
-{% block titulo %} inicio {% endblock %}
+{% block link_cambiante2 %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'editarPerfil' %}">Perfil</a></li>
+{% endblock %}
 
 {% block imagen_cambiante%}
-
 {% endblock %}
 
 {% block titulo_cambiante %}
-
-<h1 class="fw-bolder mb-1">{{ blog.titulo }}</h1>
-
+    <h1 class="fw-bolder mb-1">{{ blog.titulo }}</h1>
 {% endblock %}
 
 {% block subtitulo_cambiante %}
-
-<div class="text-muted fst-italic mb-2">Subtitulo</div>
-
-{% for imagen in blog.images.all %}
-<div class="ms-3"></div>
-
-
-<figure class="mb-4"><img class="img-fluid rounded" src="{{ imagen.imagen.url }}" alt="img"></figure>
-
-
-{% endfor %}  
+    <div class="text-muted fst-italic mb-2">Subtitulo</div>
+    <figure class="mb-4"><img class="img-fluid rounded" src="{{ blog.imagen.url }}" alt="img"></figure>
 {% endblock %}
 
 {% block contenido_cambiante %}
-
-<h2>{{blog.titulotexto}}</h2>
+    <h2>{{blog.titulotexto}}</h2>
     <p class="fs-5 mb-4">{{blog.message}}</p>
     Creado por: {{ blog.user.username }}
-    
     {% if user.id == blog.user.id %}
         <br>
-        <a class="btn btn-" href="{% url 'blogUpdate' blog.id %}">Editar</a>
-        <a class="btn btn-" href="{% url 'ImagenCreate' blog.id %}">agregarImagen</a>
-                
+        <a class="btn btn-primary" href="{% url 'blogUpdate' blog.id %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'blogDelete' blog.id %}">Eliminar</a>                        
     {% endif %}
-<br>
-<br>
-{% for mensaje in blog.mensajes.all %}
-<div class="ms-3"></div>
-
-
-
-<hr>
-<div class="fw-bold">{{mensaje.user}}:</div> {{mensaje.message}}</p>
-
-
-
-
-
-{% endfor %}      
-
-  <a class="button" href="{% url 'mensaje' blog.id %}">Crear mensaje</a>
+    <br>
+    <br>
+    <h4>Mensajes</h4>
+    {% for mensaje in blog.mensajes.all %}
+    <div class="ms-3"></div>
+    <hr>
+    <div class="fw-bold">{{mensaje.user}}:</div> {{mensaje.message}}</p>
+    {% endfor %}      
+<a class="button" href="{% url 'bmensaje' blog.id %}">Crear mensaje</a>
 
 
 {% endblock %}
