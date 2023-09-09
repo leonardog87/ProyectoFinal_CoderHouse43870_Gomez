@@ -1,8 +1,5 @@
 <<<<<<< HEAD
 # ProyectoFinal_CoderHouse43870_Gomez
-Proyecto_Final_CoderHouse43870_Gomez_v1
-=======
-# tecera_pre_entrega_gomez
 
 Leonardo Javier Gomez
 Python - CoderHouse 43870
@@ -14,18 +11,11 @@ Descripcion:
             Para realizar comentarios es necesario registrar un usuario y estar logueado.
 
 LINKS
-Proyecto Web: te envia a la pagina principal.
-Formulario: se puede agregar un correo, con la idea de que funcione como un boletin de noticias a las cuales se puedan suscribir con el correo electronico.
-Vendedor: se agregan los datos del vendedor.
-Comprador: se agregan los datos del comprador.
-Buscar: da la opcion de buscar los correos electronicos registrados, solo trae el resultado si se busca exactamente el dato.
-ADMIN: te redirecciona al panel administrable de django.
+FotografiaBlog: te envia a la pagina principal.
+Blogs: te envia a un listado de  blogs.
+Crear: te envia al formulario para crear blogs.
 
-Se pueden agregar datos a las tres clases creadas.
+Se pueden agregar fotos a los blogs, pero, para agregarla es necesario primero crear el blog. (sigo desarrollando otro modelo donde se agregue la imagen y el detalle en un mismo formulario)
 El usuario y contraseña del panel administrable de django es admin.
-<<<<<<< HEAD
->>>>>>> 2764926 (tercera_pre_entreg2)
-=======
+Se pueden generar usuarios, loguearse, guardar un avatar solo mostrable en urls especificas.
 
-
->>>>>>> a9cad41 (proyecfinal_coder43870_gomez)
