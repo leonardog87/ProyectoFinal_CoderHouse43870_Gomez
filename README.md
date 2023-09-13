@@ -4,18 +4,20 @@
 Leonardo Javier Gomez
 Python - CoderHouse 43870
 
+Link de video del proyecto funcionando.
+https://www.youtube.com/watch?v=Ga0UKQAxe7I
+
 Descripcion:
-            La Web se desarrollo con la idea que diferentes personas puedan acceder a una informacion en particular. En la misma
-            pueden realizar comentarios, para asi generar un "ida y vuelta" entre el creador de la publicacion y las diferentes
-            personas que ven dicha publicacion.
+            La Web se desarrollo con el fin de que las personas que se dedican a la fotografia puedan compartir sus fotos. En las publicaciones creadas se podra poner un titulo a la foto, asi como se podra dejar un texto "explicativo" con su propio titulo.
+            En la publicacion tambien se podran realizar comentarios para generar un ida y vuelta entre los distintos usuarios.
             Para realizar comentarios es necesario registrar un usuario y estar logueado.
 
 LINKS
-FotografiaBlog: te envia a la pagina principal.
-Blogs: te envia a un listado de  blogs.
-Crear: te envia al formulario para crear blogs.
+FotografiaBlog: te redirecciona a la pagina principal.
+Blogs: te redirecciona a un listado de  blogs.
+Crear: te redirecciona al formulario para crear un blog.
+Registrar: redirecciona a un formulario para generar un usuario nuevo
+Login: en testa pantalla podras loguearte con las datos generados en el registro.
+About Me: en este link tendras una foto y un breve detalle sobre el creador del sitio.
 
-Se pueden agregar fotos a los blogs, pero, para agregarla es necesario primero crear el blog. (sigo desarrollando otro modelo donde se agregue la imagen y el detalle en un mismo formulario)
-El usuario y contraseña del panel administrable de django es admin.
-Se pueden generar usuarios, loguearse, guardar un avatar solo mostrable en urls especificas.
 

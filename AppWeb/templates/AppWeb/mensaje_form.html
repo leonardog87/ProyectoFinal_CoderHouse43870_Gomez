@@ -16,11 +16,14 @@
 {% endblock %}
 
 {% block contenido_cambiante %}
-    
+{% if user.is_authenticated %}    
     <form method="POST"> {% csrf_token %}    
         <table>    
             {{ form.as_table }}    
         </table>     
         <input type="submit" vaLue="Enviar">
     </form>
+    {% else %}
+    <h6>Si deseas dejar tu mensaje debes loguearte!</h6>
+    {% endif %}    
 {% endblock %}

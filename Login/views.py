@@ -2,10 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from AppWeb.views import inicio
-from Profile.views import obtenerAvatar
 
 def login_request(request):
-    avatar=obtenerAvatar(request)
     if request.method=="POST":
         form=AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -15,11 +13,11 @@ def login_request(request):
             usuario=authenticate(username=user, password=clave)
             if usuario is not None:
                 login(request, usuario)
-                return render(request, "AppWeb/inicio.html", {"avatar": avatar})
+                return render(request, "AppWeb/inicio.html")
             else:
-                return render(request,"AppWeb/inicio.html", {"form":form, "avatar": avatar})
+                return render(request,"AppWeb/inicio.html", {"form":form})
         else:
             return render(request,"Login/login.html", {"form":form})
     else:
         form=AuthenticationForm()
-        return render(request,"Login/login.html", {"form":form, "avatar": avatar})
+        return render(request,"Login/login.html", {"form":form})

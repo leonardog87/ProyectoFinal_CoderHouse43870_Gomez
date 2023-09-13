@@ -15,12 +15,17 @@
 {% endblock %}
 
 {% block contenido_cambiante %}
+    {% if user.is_authenticated %}
     <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
         <table>    
         {{ form.as_table }}    
         </table>
         <input type="submit" value="Agregar blog!">
     </form>
+    {% else %}
+        <br>
+        <h6>Si deseas agregar un blog debes loguearte!</h6>
+    {% endif %}
 {% endblock %}
 
 

@@ -25,14 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         {% if user.is_authenticated %}
-                        <p class="text-muted big mb-4 mb-lg-0">Bienvenido<br>{{user.username}}!</p>
-                        
-                        {% block link_cambiante2 %}
-                        
-                        {% endblock %}
-                        
-                        {% block link_cambiante %}
-                        
+                        <p class="text-muted big mb-4 mb-lg-0">Bienvenido<br>{{user.username}}!</p>                        
+                        {% block link_cambiante2 %}                        
+                        {% endblock %}                        
+                        {% block link_cambiante %}                        
                         {% endblock %}                                                
                         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>                        
                         {% else %}
@@ -53,38 +49,34 @@
                         <!-- Post header-->
                         <header class="mb-4">
                             <!-- Post title-->
-                            {% block titulo_cambiante %}
-                            
+                            {% block titulo_cambiante %}                            
                             {% endblock %}
                             <!-- Post meta content-->
-                            {% block subtitulo_cambiante %}
-                            
+                            {% block subtitulo_cambiante %}                            
                             {% endblock %}
                         </header>
                         <!-- Preview image figure-->
-                        {% block imagen_cambiante%}
-                        
+                        {% block imagen_cambiante%}                        
                         {% endblock %}
                         <!-- Post content-->
                         <section class="mb-5">
-                            {% block contenido_cambiante %}
-        
+                            {% block titulocontenido_cambiante %}        
+                            {% endblock %}
+                            {% block contenido_cambiante %}        
                             {% endblock %}
                         </section>
                     </article>
                     <!-- Comments section-->
                     <section class="mb-5">
                         {% if user.is_authenticated %}
-                            {% block section_cambiante %}
-                        
+                            {% block section_cambiante %}                        
                             {% endblock %}
                         {% endif %}
                     </section>                
                  </div>
             <!-- Side widgets-->
             <div class="col-lg-4">
-                <!-- Search widget-->
-                
+                <!-- Search widget-->                
                 <!-- Categories widget-->
                 <div class="card mb-4">
                     <div class="card-header">Estilos de fotografia!</div>

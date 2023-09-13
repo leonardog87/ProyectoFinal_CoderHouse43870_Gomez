@@ -7,13 +7,11 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin 
 from django.contrib.auth.decorators import login_required
-from Profile.views import obtenerAvatar#, obtenerImagen
 from django.contrib.auth.models import User
 from django.db import models
 
 def inicio(request):
-    avatar=obtenerAvatar(request)
-    return render(request,'AppWeb/inicio.html', {"avatar": avatar})
+    return render(request,'AppWeb/inicio.html')
 
 def aboutme(request):
     return render(request,'AppWeb/aboutMe.html')
@@ -28,11 +26,10 @@ def Blancoynegro(request):
     return render(request,'AppWeb/Blancoynegro.html')
 
 #BLOG
-
 class BlogCreate(CreateView):
     model=Blog
     success_url=reverse_lazy("blogList")
-    fields=['imagen', 'titulo', 'message']
+    fields=['imagen', 'titulofoto', 'titulomessage', 'message']
     def form_valid(self, form):
        form.instance.user = self.request.user
        form.instance.imagen = self.request.FILES['imagen']
@@ -50,7 +47,7 @@ class BlogUpdate(UpdateView):
     model=Blog
     template_name='AppWeb/blogUpdate.html'
     success_url=reverse_lazy("blogList")
-    fields=['imagen', 'titulo', 'message']
+    fields=['titulofoto', 'titulomessage', 'message']
 
 class MensajeCreate(CreateView):
     model=Mensaje
